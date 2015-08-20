@@ -17,8 +17,7 @@
                 <h4 class="p-name">
                     <?= htmlentities(strip_tags($vars['object']->getProductName()), ENT_QUOTES, 'UTF-8'); ?> 
                 </h4>
-                <span class="p-rating"><?= $vars['object']->getRating(); ?></span> out of 5 stars.
-
+                
     <?php
         if ($attachments = $vars['object']->getAttachments()) {
             foreach ($attachments as $attachment) {
@@ -44,7 +43,11 @@
             <?php
             }
         }
-    ?> 
+    ?>
+            <div class="rating-container" style="font-weight: bold; margin: 1em 0;">
+                <span class="p-rating"><?= $vars['object']->getRating(); ?></span> out of 5 stars.
+            </div> 
+
             <div class="e-description">
                 <?= $this->__(['value' => $vars['object']->body, 'object' => $vars['object'], 'rel' => $rel])->draw('forms/output/richtext'); ?>
             </div>
