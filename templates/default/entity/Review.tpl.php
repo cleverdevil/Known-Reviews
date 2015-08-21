@@ -5,8 +5,7 @@
             ?>
             <h2 class="p-name">
                 <a class="u-url" href="<?= $vars['object']->getDisplayURL() ?>">
-                    <span class="p-category"><?= $vars['object']->getProductCategory(); ?></span> 
-                    Review: <?= htmlentities(strip_tags($vars['object']->getTitle()), ENT_QUOTES, 'UTF-8'); ?>
+                    <span class="p-category"><?= $vars['object']->getProductCategory(); ?></span> Review: <?= htmlentities(strip_tags($vars['object']->getTitle()), ENT_QUOTES, 'UTF-8'); ?>
                 </a>
             </h2>
             <?php
@@ -14,10 +13,7 @@
     ?>
             
             <div class="p-item h-product">
-                <h4 class="p-name">
-                    <?= htmlentities(strip_tags($vars['object']->getProductName()), ENT_QUOTES, 'UTF-8'); ?> 
-                </h4>
-                
+                                
     <?php
         if ($attachments = $vars['object']->getAttachments()) {
             foreach ($attachments as $attachment) {
@@ -37,18 +33,33 @@
                 ?>
                 <p style="text-align: center">
                     <a href="<?= $this->makeDisplayURL($mainsrc) ?>"><img src="<?= $this->makeDisplayURL($src) ?>" class="u-photo"/></a>
+                    <a href="<?= $vars['object']->getProductLink(); ?>" class="u-url">
+                    <h4 class="p-name" style="text-align: center">
+                        <?= htmlentities(strip_tags($vars['object']->getProductName()), ENT_QUOTES, 'UTF-8'); ?> 
+                    </h4>
+                    </a>
                 </p>
             </div>
-            <br>
+            <div class="rating-container" style="font-weight: bold; margin: 1em 0; text-align: center;">
+                <span class="p-rating"><?= $vars['object']->getRating(); ?></span> out of 5 stars
+            </div>
             <?php
             }
         }
     ?>
-            <div class="rating-container" style="font-weight: bold; margin: 1em 0;">
-                <span class="p-rating"><?= $vars['object']->getRating(); ?></span> out of 5 stars.
-            </div> 
-
+            
             <div class="e-description">
                 <?= $this->__(['value' => $vars['object']->body, 'object' => $vars['object'], 'rel' => $rel])->draw('forms/output/richtext'); ?>
+            </div>
+            
+            <div style="display: none;" class="p-reviewer">
+                <p class="h-card vcard">
+                    <a href="<?= $vars['object']->getOwner()->getURL(); ?>" class="icon-container">
+                        <img class="u-logo logo u-photo photo" src="<?= $vars['object']->getOwner()->getIcon(); ?>"/>
+                    </a>
+                    <a class="p-name fn u-url url" href="<?= $vars['object']->getOwner()->getURL(); ?>"><?= $vars['object']->getOwner()->getName(); ?></a>
+                    <a class="u-url" href="<?= $vars['object']->getOwner()->getURL(); ?>">
+                        <!-- This is here to force the hand of your MF2 parser --></a>
+                </p>
             </div>
 </article>
