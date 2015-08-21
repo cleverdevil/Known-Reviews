@@ -52,8 +52,8 @@
                 <?= $this->__(['value' => $vars['object']->body, 'object' => $vars['object'], 'rel' => $rel])->draw('forms/output/richtext'); ?>
             </div>
             
-            <div style="display: none;" class="p-reviewer">
-                <p class="h-card vcard">
+            <div style="display: none;">
+                <p class="h-card vcard p-reviewer">
                     <a href="<?= $vars['object']->getOwner()->getURL(); ?>" class="icon-container">
                         <img class="u-logo logo u-photo photo" src="<?= $vars['object']->getOwner()->getIcon(); ?>"/>
                     </a>
