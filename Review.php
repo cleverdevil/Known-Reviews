@@ -70,12 +70,12 @@
             }
 
             /**
-             * Review objects have type 'review'
-             * @return 'review'
+             * Review objects have type 'article'
+             * @return 'article'
              */
             function getActivityStreamsObjectType()
             {
-                return 'review';
+                return 'article';
             }
 
             /**
