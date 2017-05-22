@@ -92,6 +92,17 @@
 
                 return parent::getIcon();
             }
+            
+            function getMetadataForFeed()
+            {
+                return array(
+                    'type' => 'review',
+                    'rating' => $this->getRating() . '/5',
+                    'product-name' => $this->getProductName(),
+                    'product-category' => $this->getProductCategory(),
+                    'product-link' => $this->getProductLink()
+                );
+            }
 
             function saveDataFromInput()
             {
