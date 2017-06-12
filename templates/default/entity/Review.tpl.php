@@ -52,14 +52,4 @@
                 <?= $this->__(['value' => $vars['object']->body, 'object' => $vars['object']])->draw('forms/output/richtext'); ?>
             </div>
             
-            <div style="display: none;">
-                <p class="h-card vcard p-author">
-                    <a href="<?= $vars['object']->getOwner()->getURL(); ?>" class="icon-container">
-                        <img class="u-logo logo u-photo photo" src="<?= $vars['object']->getOwner()->getIcon(); ?>"/>
-                    </a>
-                    <a class="p-name fn u-url url" href="<?= $vars['object']->getOwner()->getURL(); ?>"><?= $vars['object']->getOwner()->getName(); ?></a>
-                    <a class="u-url" href="<?= $vars['object']->getOwner()->getURL(); ?>">
-                        <!-- This is here to force the hand of your MF2 parser --></a>
-                </p>
-            </div>
 </article>
