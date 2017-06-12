@@ -1,4 +1,4 @@
-<article class="h-review known-review">
+<article class="known-review">
     <?php
 
         if (\Idno\Core\site()->template()->getTemplateType() == 'default') {
@@ -49,7 +49,7 @@
     ?>
             
             <div class="e-content">
-                <?= $this->__(['value' => $vars['object']->body, 'object' => $vars['object'], 'rel' => $rel])->draw('forms/output/richtext'); ?>
+                <?= $this->__(['value' => $vars['object']->body, 'object' => $vars['object']])->draw('forms/output/richtext'); ?>
             </div>
             
             <div style="display: none;">

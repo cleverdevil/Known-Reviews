@@ -78,6 +78,15 @@
                 return 'article';
             }
 
+            
+            /**
+             * Review objects show up as h-review in a Microformats stream
+             * @return string
+             */
+            function getMicroformats2ObjectType() {
+                return 'h-review';
+            }
+
             /**
              * Retrieve icon
              * @return mixed|string
