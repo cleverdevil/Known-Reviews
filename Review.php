@@ -23,7 +23,7 @@
 
             function getRating()
             {
-                if (!empty($this->rating)) return $this->rating;
+                if (!empty($this->rating)) return (int) $this->rating;
 
                 return '';
             }
@@ -106,10 +106,11 @@
             {
                 return array(
                     'type' => 'review',
-                    'rating' => $this->getRating() . '/5',
-                    'product-name' => $this->getProductName(),
-                    'product-category' => $this->getProductCategory(),
-                    'product-link' => $this->getProductLink()
+                    'rating' => $this->getRating(),
+                    'item' => array(
+                        'name' => $this->getProductName(),
+                        'url' => $this->getProductLink()
+                    )
                 );
             }
 

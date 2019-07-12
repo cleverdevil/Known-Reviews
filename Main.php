@@ -5,10 +5,10 @@
         class Main extends \Idno\Common\Plugin {
 
             function registerPages() {
-                \Idno\Core\site()->addPageHandler('/review/edit/?', '\IdnoPlugins\Review\Pages\Edit');
-                \Idno\Core\site()->addPageHandler('/review/edit/([A-Za-z0-9]+)/?', '\IdnoPlugins\Review\Pages\Edit');
-                \Idno\Core\site()->addPageHandler('/review/delete/([A-Za-z0-9]+)/?', '\IdnoPlugins\Review\Pages\Delete');
-                \Idno\Core\site()->addPageHandler('/review/([A-Za-z0-9]+)/.*', '\Idno\Pages\Entity\View');
+                \Idno\Core\site()->routes()->addRoute('/review/edit/?', '\IdnoPlugins\Review\Pages\Edit');
+                \Idno\Core\site()->routes()->addRoute('/review/edit/([A-Za-z0-9]+)/?', '\IdnoPlugins\Review\Pages\Edit');
+                \Idno\Core\site()->routes()->addRoute('/review/delete/([A-Za-z0-9]+)/?', '\IdnoPlugins\Review\Pages\Delete');
+                \Idno\Core\site()->routes()->addRoute('/review/([A-Za-z0-9]+)/.*', '\Idno\Pages\Entity\View');
             }
 
             /**
